@@ -13,12 +13,12 @@ public class Library {
         return this.stock.size();
     }
 
-    public boolean checkStock(){
-        return countBooks() < this.capacity;
+    public boolean isFull(){
+        return countBooks() == this.capacity;
     }
 
     public void addBook(Book book) {
-        if (checkStock()) {
+        if (!isFull()) {
             this.stock.add(book);
         } else {
             System.err.println("Cannot add a book, library is full");
